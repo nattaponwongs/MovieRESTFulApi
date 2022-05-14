@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MovieFav.Views.ItemDetailPage"
+             Title="{Binding Title}">
+
+    
+    <ScrollView>
+        <StackLayout VerticalOptions="FillAndExpand"
+                     Spacing="20" Padding="15">
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Movie Name: " FontSize="Medium"/>
+                <Entry Text="{Binding Name,Mode=TwoWay}" 
+                       TextColor="Blue" 
+                       FontSize="Medium"
+                       WidthRequest="250" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Editor Text="{Binding Description,Mode=TwoWay}" 
+                        TextColor="Blue"
+                        FontSize="Small" 
+                        AutoSize="TextChanges" 
+                        Placeholder="Description"/>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="ยกเลิก" Command="{Binding CancelCommand}"
+                        HorizontalOptions="FillAndExpand"/>
+                <Button Text="บันทึก/แก้ไข" Command="{Binding SaveCommand}"
+                        CommandParameter="{Binding MovieEdit}"
+                        HorizontalOptions="FillAndExpand"/>
+            </StackLayout>
+            <StackLayout x:Name="WebViewLayout"
+                         VerticalOptions="FillAndExpand">
+                
+                <WebView Source="{Binding URL}" VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand" />
+            </StackLayout>
+        </StackLayout>
+
+    </ScrollView>
+
+
+</ContentPage>

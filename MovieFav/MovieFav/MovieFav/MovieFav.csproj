@@ -1,0 +1,27 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <ProduceReferenceAssembly>true</ProduceReferenceAssembly>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Fonts\moregular.otf" />
+    <None Remove="Resources\Fonts\mrregular.otf" />
+    <None Remove="Resources\Fonts\msregular.otf" />
+    <None Remove="Resources\Fonts\mttregular.otf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Fonts\moregular.otf" />
+    <EmbeddedResource Include="Resources\Fonts\mrregular.otf" />
+    <EmbeddedResource Include="Resources\Fonts\msregular.otf" />
+    <EmbeddedResource Include="Resources\Fonts\mttregular.otf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Json" Version="5.0.1" />
+    <PackageReference Include="Xamarin.Forms" Version="5.0.0.2012" />  
+    <PackageReference Include="Xamarin.Essentials" Version="1.6.1" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MovieFav.Views.NewItemPage"
+             Shell.PresentationMode="ModalAnimated"
+             Title="New Item"
+             xmlns:ios="clr-namespace:Xamarin.Forms.PlatformConfiguration.iOSSpecific;assembly=Xamarin.Forms.Core"
+             ios:Page.UseSafeArea="true">
+    <ContentPage.Content>
+        <StackLayout Spacing="3" Padding="15">
+            <Label Text="Movie Code" FontSize="Medium" />
+            <Entry Text="{Binding MovieCode, Mode=TwoWay}" FontSize="Medium" />
+            <Label Text="Name" FontSize="Medium" />
+            <Entry Text="{Binding Name, Mode=TwoWay}" FontSize="Medium" />
+            <Label Text="Description" FontSize="Medium" />
+            <Editor Text="{Binding Description, Mode=TwoWay}" AutoSize="TextChanges" FontSize="Medium" Margin="0" />
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Type" FontSize="Medium" />
+                <Label x:Name="txtType" TextColor="Blue"
+                       Text="{Binding Type, Mode=TwoWay}" FontSize="Medium" />
+
+            </StackLayout>
+            <Picker x:Name="pickerX"
+                    Title="Select Type"
+                    TitleColor="Red"
+                    SelectedIndexChanged="pickerX_SelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>Rock</x:String>
+                    <x:String>Pop</x:String>
+                    <x:String>Electronic</x:String>
+                    <x:String>Soul RandB</x:String>
+                    <x:String>Funk</x:String>
+                    <x:String>Country</x:String>
+                    <x:String>Reggae</x:String>
+                </Picker.Items>
+            </Picker>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Cancel" Command="{Binding CancelCommand}" HorizontalOptions="FillAndExpand"></Button>
+                <Button Text="Save" Command="{Binding SaveCommand}" HorizontalOptions="FillAndExpand"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+    
+</ContentPage>
